@@ -1,9 +1,10 @@
 import React from "react";
 import WelcomeScreen from "../welcome-screen/welcome-screen.jsx";
 
-const App = () => {
+// eslint-disable-next-line react/prop-types
+const App = ({maxErrorsCount}) => {
   return (
-    <WelcomeScreen />
+    <WelcomeScreen maxErrorsCount={maxErrorsCount} />
   );
 };
 
