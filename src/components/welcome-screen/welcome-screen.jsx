@@ -1,6 +1,7 @@
 import React from "react";
 
-const WelcomeScreen = () => {
+// eslint-disable-next-line react/prop-types
+const WelcomeScreen = ({maxErrorsCount}) => {
   return (
     <section className="welcome">
       <div className="welcome__logo">
@@ -11,7 +12,7 @@ const WelcomeScreen = () => {
       <p className="welcome__text">Правила просты:</p>
       <ul className="welcome__rules-list">
         <li>Нужно ответить на все вопросы.</li>
-        <li>Можно допустить 3 ошибки.</li>
+        <li>Можно допустить {maxErrorsCount} ошибки.</li>
       </ul>
       <p className="welcome__text">Удачи!</p>
     </section>
