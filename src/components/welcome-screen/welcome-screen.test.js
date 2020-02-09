@@ -3,8 +3,12 @@ import renderer from "react-test-renderer";
 import WelcomeScreen from "./welcome-screen.jsx";
 
 const MAX_ERRORS_COUNT = 3;
+const welcomeButtonHandler = () => {};
 
 it(`WelcomeScreen should render correctly`, () => {
-  const renderedTree = renderer.create(<WelcomeScreen maxErrorsCount={MAX_ERRORS_COUNT} />).toJSON();
+  const renderedTree = renderer
+    .create(
+        <WelcomeScreen maxErrorsCount={MAX_ERRORS_COUNT} onWelcomeButtonClick={welcomeButtonHandler} />)
+    .toJSON();
   expect(renderedTree).toMatchSnapshot();
 });
