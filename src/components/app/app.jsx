@@ -1,11 +1,17 @@
 import React from "react";
+import PropTypes from "prop-types";
 import WelcomeScreen from "../welcome-screen/welcome-screen.jsx";
 
-// eslint-disable-next-line react/prop-types
+const welcomeButtonHandler = () => {};
+
 const App = ({maxErrorsCount}) => {
   return (
-    <WelcomeScreen maxErrorsCount={maxErrorsCount} />
+    <WelcomeScreen maxErrorsCount={maxErrorsCount} onWelcomeButtonClick={welcomeButtonHandler} />
   );
+};
+
+App.propTypes = {
+  maxErrorsCount: PropTypes.number.isRequired
 };
 
 export default App;
