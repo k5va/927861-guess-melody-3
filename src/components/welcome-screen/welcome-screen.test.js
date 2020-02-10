@@ -1,4 +1,3 @@
-import renderer from "react-test-renderer";
 import WelcomeScreen from "./welcome-screen";
 
 const MAX_ERRORS_COUNT = 3;
