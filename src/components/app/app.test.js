@@ -1,5 +1,3 @@
-import React from "react";
-import renderer from "react-test-renderer";
 import App from "./app";
 
 const MAX_ERRORS_COUNT = 3;
