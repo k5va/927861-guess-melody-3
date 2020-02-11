@@ -1,10 +1,10 @@
 import WelcomeScreen from "../welcome-screen/welcome-screen";
 
-const welcomeButtonHandler = () => {};
-
 const App = ({maxErrorsCount}) => {
+  const handleWelcomeButtonClick = () => {};
+
   return (
-    <WelcomeScreen maxErrorsCount={maxErrorsCount} onWelcomeButtonClick={welcomeButtonHandler} />
+    <WelcomeScreen maxErrorsCount={maxErrorsCount} onWelcomeButtonClick={handleWelcomeButtonClick} />
   );
 };
 
