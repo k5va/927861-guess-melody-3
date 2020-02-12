@@ -3,7 +3,7 @@ import WelcomeScreen from "../welcome-screen/welcome-screen";
 import ArtistQuestionScreen from "../artist-question-screen/artist-question-screen";
 import GenreQuestionScreen from "../genre-question-screen/genre-question-screen";
 
-const App = ({maxErrorsCount}) => {
+const App = ({maxErrorsCount, questions}) => {
   const handleWelcomeButtonClick = () => {};
 
   return (
@@ -13,10 +13,10 @@ const App = ({maxErrorsCount}) => {
           <WelcomeScreen maxErrorsCount={maxErrorsCount} onWelcomeButtonClick={handleWelcomeButtonClick} />
         </Route>
         <Route exact path="/dev-artist">
-          <ArtistQuestionScreen />
+          <ArtistQuestionScreen onAnswer={() => {}} question={questions[1]} />
         </Route>
         <Route exact path="/dev-genre">
-          <GenreQuestionScreen />
+          <GenreQuestionScreen onAnswer={() => {}} question={questions[0]} />
         </Route>
       </Switch>
     </BrowserRouter>
@@ -24,7 +24,8 @@ const App = ({maxErrorsCount}) => {
 };
 
 App.propTypes = {
-  maxErrorsCount: PropTypes.number.isRequired
+  maxErrorsCount: PropTypes.number.isRequired,
+  questions: PropTypes.array.isRequired
 };
 
 export default App;
