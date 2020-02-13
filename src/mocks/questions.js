@@ -1,8 +1,6 @@
-import App from "./app";
+const AVATAR_URL = `https://api.adorable.io/avatars/128`;
 
-const MAX_ERRORS_COUNT = 3;
-
-const questions = [
+export default [
   {
     type: `genre`,
     genre: `rock`,
@@ -27,20 +25,14 @@ const questions = [
       src: `https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg`,
     },
     answers: [{
-      picture: `https://api.adorable.io/avatars/128/1`,
+      picture: `${AVATAR_URL}/${Math.random()}`,
       artist: `John Snow`,
     }, {
-      picture: `https://api.adorable.io/avatars/128/2`,
+      picture: `${AVATAR_URL}/${Math.random()}`,
       artist: `Jack Daniels`,
     }, {
-      picture: `https://api.adorable.io/avatars/128/3`,
+      picture: `${AVATAR_URL}/${Math.random()}`,
       artist: `Jim Beam`,
     }],
   }
 ];
-
-
-it(`App should render correctly`, () => {
-  const renderedTree = renderer.create(<App maxErrorsCount={MAX_ERRORS_COUNT} questions={questions}/>).toJSON();
-  expect(renderedTree).toMatchSnapshot();
-});
