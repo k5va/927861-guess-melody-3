@@ -48,9 +48,9 @@ class App extends React.PureComponent {
     if (question) {
       switch (question.type) {
         case GameType.ARTIST:
-          return <ArtistQuestionScreen question={questions[1]} onAnswer={this._increaseState} />;
+          return <ArtistQuestionScreen question={question} onAnswer={this._increaseState} />;
         case GameType.GENRE:
-          return <GenreQuestionScreen question={questions[0]} onAnswer={this._increaseState} />;
+          return <GenreQuestionScreen question={question} onAnswer={this._increaseState} />;
       }
     }
 
