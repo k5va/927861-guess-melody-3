@@ -1,4 +1,4 @@
-import {GameType} from "@consts/consts";
+import {GameType} from "@consts";
 
 const ArtistQuestionScreen = (props) => {
   const {onAnswer, question} = props;

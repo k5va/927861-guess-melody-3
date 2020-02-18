@@ -1,6 +1,6 @@
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import {WelcomeScreen, ArtistQuestionScreen, GenreQuestionScreen} from "@components";
-import {GameStep, GameType} from "@consts/consts";
+import {GameStep, GameType} from "@consts";
 
 class App extends React.PureComponent {
 

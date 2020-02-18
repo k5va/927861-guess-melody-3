@@ -1,4 +1,4 @@
-import {GameType} from "@consts/consts";
+import {GameType} from "@consts";
 class GenreQuestionScreen extends React.PureComponent {
   constructor(props) {
     super(props);
