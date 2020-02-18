@@ -26,7 +26,12 @@ module.exports = {
   },
   devtool: `source-map`,
   resolve: {
-    extensions: [`.js`, `.jsx`]
+    extensions: [`.js`, `.jsx`],
+    alias: {
+      "@components": path.resolve(__dirname, `./src/components/`),
+      "@consts": path.resolve(__dirname, `./src/consts/`),
+      "@mocks": path.resolve(__dirname, `./src/mocks/`)
+    }
   },
   plugins: [
     new webpack.ProvidePlugin({
