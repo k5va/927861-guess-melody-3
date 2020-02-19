@@ -1,4 +1,4 @@
-import GenreQuestionScreen from "./genre-question-screen";
+import {GenreQuestionScreen} from "@components";
 
 const question = {
   type: `genre`,

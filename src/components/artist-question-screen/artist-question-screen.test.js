@@ -1,4 +1,4 @@
-import ArtistQuestionScreen from "./artist-question-screen";
+import {ArtistQuestionScreen} from "@components";
 
 const question = {
   type: `artist`,

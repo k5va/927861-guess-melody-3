@@ -1,4 +1,4 @@
-import App from "./app";
+import {App} from "@components";
 
 const MAX_ERRORS_COUNT = 3;
 

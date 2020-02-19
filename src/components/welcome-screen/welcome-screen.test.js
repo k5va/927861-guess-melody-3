@@ -1,4 +1,4 @@
-import WelcomeScreen from "./welcome-screen";
+import {WelcomeScreen} from "@components";
 
 const MAX_ERRORS_COUNT = 3;
 const handleWelcomeButtonClick = () => {};

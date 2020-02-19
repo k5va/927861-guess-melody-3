@@ -1,4 +1,4 @@
-import ArtistQuestionScreen from "./artist-question-screen";
+import {ArtistQuestionScreen} from "@components";
 
 const ON_ANSWER_CALL_COUNT = 1;
 const USER_ANSWER_NUMBER = 0;

@@ -1,4 +1,4 @@
-import GenreQuestionScreen from "./genre-question-screen";
+import {GenreQuestionScreen} from "@components";
 
 const ON_ANSWER_CALL_COUNT = 1;
 const USER_ANSWER_NUMBER = 0;
