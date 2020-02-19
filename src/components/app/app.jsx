@@ -1,5 +1,5 @@
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import {WelcomeScreen, ArtistQuestionScreen, GenreQuestionScreen} from "@components";
+import {WelcomeScreen, ArtistQuestionScreen, GenreQuestionScreen, GameScreen} from "@components";
 import {GameStep, GameType} from "@consts";
 
 class App extends React.PureComponent {
@@ -24,10 +24,14 @@ class App extends React.PureComponent {
             {this._renderGameScreen()}
           </Route>
           <Route exact path="/dev-artist">
-            <ArtistQuestionScreen onAnswer={() => {}} question={questions[1]} />
+            <GameScreen type={GameType.ARTIST}>
+              <ArtistQuestionScreen onAnswer={() => {}} question={questions[1]} />
+            </GameScreen>
           </Route>
           <Route exact path="/dev-genre">
-            <GenreQuestionScreen onAnswer={() => {}} question={questions[0]} />
+            <GameScreen type={GameType.GENRE}>
+              <GenreQuestionScreen onAnswer={() => {}} question={questions[0]} />
+            </GameScreen>
           </Route>
         </Switch>
       </BrowserRouter>
@@ -48,9 +52,17 @@ class App extends React.PureComponent {
     if (question) {
       switch (question.type) {
         case GameType.ARTIST:
-          return <ArtistQuestionScreen question={question} onAnswer={this._increaseState} />;
+          return (
+            <GameScreen type={question.type}>
+              <ArtistQuestionScreen question={question} onAnswer={this._increaseState} />
+            </GameScreen>
+          );
         case GameType.GENRE:
-          return <GenreQuestionScreen question={question} onAnswer={this._increaseState} />;
+          return (
+            <GameScreen type={question.type}>
+              <GenreQuestionScreen question={question} onAnswer={this._increaseState} />
+            </GameScreen>
+          );
       }
     }
 
