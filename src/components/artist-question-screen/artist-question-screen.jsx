@@ -1,51 +1,40 @@
-import {AudioPlayer} from "@components";
 import {GameType} from "@consts";
+import {withActivePlayer} from "@hocs";
 
-class ArtistQuestionScreen extends React.PureComponent {
-  constructor(props) {
-    super(props);
+const PLAYER_ID = 0;
 
-    this.state = {isPlaying: true};
-  }
+const ArtistQuestionScreen = (props) => {
+  const {onAnswer, question, renderPlayer} = props;
+  const {answers, song} = question;
 
-  render() {
-    const {onAnswer, question} = this.props;
-    const {answers, song} = question;
-    const {isPlaying} = this.state;
-
-    return (
-      <section className="game__screen">
-        <h2 className="game__title">Кто исполняет эту песню?</h2>
-        <div className="game__track">
-          <div className="track">
-            <AudioPlayer
-              isPlaying={isPlaying}
-              src={song.src}
-              onPlayButtonClick={() => this.setState((prevState) => ({isPlaying: !prevState.isPlaying}))}
-            />
-          </div>
+  return (
+    <section className="game__screen">
+      <h2 className="game__title">Кто исполняет эту песню?</h2>
+      <div className="game__track">
+        <div className="track">
+          {renderPlayer(PLAYER_ID, song.src)}
         </div>
+      </div>
 
-        <form className="game__artist">
-          {answers.map((answer, index) => (
-            <div className="artist" key={answer.id}>
-              <input className="artist__input visually-hidden" type="radio"
-                name="answer" value={`artist-${index}`} id={`artist-${index}`}
-                onChange={(evt) => {
-                  evt.preventDefault();
-                  onAnswer(question, answer);
-                }}
-              />
-              <label className="artist__name" htmlFor={`artist-${index}`}>
-                <img className="artist__picture" src={answer.picture} alt={answer.artist} />
-                {answer.artist}
-              </label>
-            </div>
-          ))}
-        </form>
-      </section>
-    );
-  }
+      <form className="game__artist">
+        {answers.map((answer, index) => (
+          <div className="artist" key={answer.id}>
+            <input className="artist__input visually-hidden" type="radio"
+              name="answer" value={`artist-${index}`} id={`artist-${index}`}
+              onChange={(evt) => {
+                evt.preventDefault();
+                onAnswer(question, answer);
+              }}
+            />
+            <label className="artist__name" htmlFor={`artist-${index}`}>
+              <img className="artist__picture" src={answer.picture} alt={answer.artist} />
+              {answer.artist}
+            </label>
+          </div>
+        ))}
+      </form>
+    </section>
+  );
 };
 
 ArtistQuestionScreen.propTypes = {
@@ -60,7 +49,8 @@ ArtistQuestionScreen.propTypes = {
       src: PropTypes.string.isRequired
     }).isRequired,
     type: PropTypes.oneOf([GameType.ARTIST, GameType.GENRE]).isRequired
-  }).isRequired
+  }).isRequired,
+  renderPlayer: PropTypes.func.isRequired
 };
 
-export default ArtistQuestionScreen;
+export default withActivePlayer(ArtistQuestionScreen);

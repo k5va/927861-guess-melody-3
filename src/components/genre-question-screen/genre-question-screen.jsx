@@ -1,25 +1,19 @@
-import {AudioPlayer} from "@components";
 import {GameType} from "@consts";
-
-const ActivePlayer = {
-  DEFAULT: 0,
-  UNSET: -1
-};
+import {withActivePlayer} from "@hocs";
 
 class GenreQuestionScreen extends React.PureComponent {
   constructor(props) {
     super(props);
 
     this.state = {
-      answers: [false, false, false, false],
-      activePlayer: ActivePlayer.DEFAULT
+      answers: [false, false, false, false]
     };
   }
 
   render() {
-    const {question} = this.props;
+    const {question, renderPlayer} = this.props;
     const {answers, genre} = question;
-    const {answers: userAnswers, activePlayer} = this.state;
+    const {answers: userAnswers} = this.state;
 
     return (
       <section className="game__screen">
@@ -29,13 +23,7 @@ class GenreQuestionScreen extends React.PureComponent {
         >
           {answers.map((answer, index) => (
             <div className="track" key={answer.id}>
-              <AudioPlayer
-                isPlaying={index === activePlayer}
-                src={answer.src}
-                onPlayButtonClick={() => (
-                  this.setState({activePlayer: activePlayer === index ? ActivePlayer.UNSET : index})
-                )}
-              />
+              {renderPlayer(index, answer.src)}
               <div className="game__answer">
                 <input className="game__input visually-hidden" type="checkbox" name="answer"
                   value={`answer-${index}`} id={`answer-${index}`}
@@ -76,6 +64,7 @@ GenreQuestionScreen.propTypes = {
     genre: PropTypes.string.isRequired,
     type: PropTypes.oneOf([GameType.ARTIST, GameType.GENRE]).isRequired,
   }).isRequired,
+  renderPlayer: PropTypes.func.isRequired
 };
 
-export default GenreQuestionScreen;
+export default withActivePlayer(GenreQuestionScreen);
