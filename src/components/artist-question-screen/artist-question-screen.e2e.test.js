@@ -34,7 +34,7 @@ it(`Click on user answer should pass to the callback data-object from which this
   const handleAnswer = jest.fn();
   const userAnswer = question.answers[USER_ANSWER_NUMBER];
 
-  const screen = shallow(
+  const screen = mount(
       <ArtistQuestionScreen question={question} onAnswer={handleAnswer} />
   );
 

@@ -52,7 +52,10 @@ it(`GameScreen with GenreQuestionScreen should render correctly`, () => {
   const wrapper = renderer.create(
       <GameScreen type={GameType.GENRE}>
         <GenreQuestionScreen question={questions[0]} onAnswer={() => {}} />
-      </GameScreen>
+      </GameScreen>,
+      {
+        createNodeMock: () => ({})
+      }
   ).toJSON();
   expect(wrapper).toMatchSnapshot();
 });
@@ -61,7 +64,10 @@ it(`GameScreen with ArtistQuestionScreen should render correctly`, () => {
   const wrapper = renderer.create(
       <GameScreen type={GameType.ARTIST}>
         <ArtistQuestionScreen question={questions[1]} onAnswer={() => {}} />
-      </GameScreen>
+      </GameScreen>,
+      {
+        createNodeMock: () => ({})
+      }
   ).toJSON();
   expect(wrapper).toMatchSnapshot();
 });
