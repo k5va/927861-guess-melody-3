@@ -1,4 +1,3 @@
-import {shallow} from "enzyme";
 import WelcomeScreen from "./welcome-screen";
 
 const MAX_ERRORS_COUNT = 3;

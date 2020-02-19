@@ -1,4 +1,3 @@
-import {shallow} from "enzyme";
 import GenreQuestionScreen from "./genre-question-screen";
 
 const ON_ANSWER_CALL_COUNT = 1;
