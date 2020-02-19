@@ -39,7 +39,7 @@ class GenreQuestionScreen extends React.PureComponent {
             onSubmit={(evt) => this._handleFormSubmit(evt)}
           >
             {answers.map((answer, index) => (
-              <div className="track" key={answer.genre + index}> {/* FIXME: temporary key */}
+              <div className="track" key={answer.id}>
                 <button className="track__button track__button--play" type="button"></button>
                 <div className="track__status">
                   <audio src={answer.src}></audio>

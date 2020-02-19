@@ -1,21 +1,27 @@
 import {GenreQuestionScreen} from "@components";
+import {generateId} from "@utils";
 
 const ON_ANSWER_CALL_COUNT = 1;
 const USER_ANSWER_NUMBER = 0;
 
 const question = {
+  id: generateId(),
   type: `genre`,
   genre: `rock`,
   answers: [{
+    id: generateId(),
     src: `one`,
     genre: `rock`,
   }, {
+    id: generateId(),
     src: `two`,
     genre: `blues`,
   }, {
+    id: generateId(),
     src: `three`,
     genre: `jazz`,
   }, {
+    id: generateId(),
     src: `four`,
     genre: `rock`,
   }]

@@ -1,21 +1,26 @@
 import {ArtistQuestionScreen} from "@components";
+import {generateId} from "@utils";
 
 const ON_ANSWER_CALL_COUNT = 1;
 const USER_ANSWER_NUMBER = 0;
 
 const question = {
+  id: generateId(),
   type: `artist`,
   song: {
     artist: `artist`,
     src: `pic`,
   },
   answers: [{
+    id: generateId(),
     picture: `pic one`,
     artist: `One`,
   }, {
+    id: generateId(),
     picture: `pic two`,
     artist: `Two`,
   }, {
+    id: generateId(),
     picture: `pic three`,
     artist: `Three`,
   }],

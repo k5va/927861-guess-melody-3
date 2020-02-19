@@ -88,7 +88,6 @@ exports[`ArtistQuestionScreen should render correctly 1`] = `
       <div
         className="artist"
       >
-         
         <input
           className="artist__input visually-hidden"
           id="artist-0"
@@ -112,7 +111,6 @@ exports[`ArtistQuestionScreen should render correctly 1`] = `
       <div
         className="artist"
       >
-         
         <input
           className="artist__input visually-hidden"
           id="artist-1"
@@ -136,7 +134,6 @@ exports[`ArtistQuestionScreen should render correctly 1`] = `
       <div
         className="artist"
       >
-         
         <input
           className="artist__input visually-hidden"
           id="artist-2"

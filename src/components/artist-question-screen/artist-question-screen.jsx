@@ -37,7 +37,7 @@ const ArtistQuestionScreen = (props) => {
 
         <form className="game__artist">
           {answers.map((answer, index) => (
-            <div className="artist" key={answer.artist}> {/* FIXME: temporary key */}
+            <div className="artist" key={answer.id}>
               <input className="artist__input visually-hidden" type="radio"
                 name="answer" value={`artist-${index}`} id={`artist-${index}`}
                 onChange={(evt) => {
